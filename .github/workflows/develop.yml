@@ -16,6 +16,7 @@ on:
 
 jobs:
   test:
+    needs: security
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -27,6 +28,7 @@ jobs:
         cache: maven
     - name: Test with Maven
       run: mvn -B test
+
   security:
     runs-on: ubuntu-latest
     steps:
